@@ -1,0 +1,26 @@
+name: Android Build
+on: [push]
+jobs:
+  export:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Godot
+        uses: chickensoft-games/setup-godot@v1
+        with:
+          version: 4.2.1
+          use-dotnet: false
+          include-templates: true
+
+      - name: Export APK
+        run: |
+          mkdir -p build/android
+          godot --headless --export-release "Android" build/android/MythOfMedusa.apk
+
+      - name: Upload APK
+        uses: actions/upload-artifact@v4
+        with:
+          name: MythOfMedusa
+          path: build/android/MythOfMedusa.apk

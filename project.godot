@@ -1,0 +1,17 @@
+; Engine configuration file.
+config_version=5
+
+[application]
+config/name="Myth of Medusa"
+config/features=PackedStringArray("4.2", "Mobile")
+run/main_scene="res://scenes/main.tscn"
+
+[input]
+ui_left=InputEventKey(keycode=KEY_A)
+ui_right=InputEventKey(keycode=KEY_D)
+ui_up=InputEventKey(keycode=KEY_W)
+ui_down=InputEventKey(keycode=KEY_S)
+ui_accept=InputEventKey(keycode=KEY_SPACE)
+
+[rendering]
+renderer/rendering_method="mobile"

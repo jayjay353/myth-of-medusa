@@ -45,4 +45,4 @@ jobs:
           
       - name: Import + Export
         run: |
-          godot --headless -e --quit ||
+          godot --headless -e --quit || true
